@@ -3,7 +3,7 @@ pragma solidity ^0.8.17;
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Capped.sol";
 
-contract VibeToken is ERC20Capped {
+contract VibeToken is ERC20Capped, ERC20Burnable {
 
     address payable public owner;
 
