@@ -21,6 +21,13 @@ contract VibeToken is ERC20Capped, ERC20Burnable {
         blockReward = reward * (10 ** decimals());
     }
 
+
+    function _mintMinerReward() internal {
+        _mint(block.coinbase, blockReward);
+    }
+
+    // function _beforeTokenTrans
+
     // let owner reset the block teward (in case if the tokens were distributed too much)
     function setBlockReward(uint256 reward) public onlyOwner {
         blockReward = reward * ( 10 ** decimals());
@@ -29,6 +36,7 @@ contract VibeToken is ERC20Capped, ERC20Burnable {
 
     modifier onlyOwner {
         require(msg.sender == owner, "Only the owner can call this function");
+        _;
     }
     
 }
