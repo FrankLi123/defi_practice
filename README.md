@@ -14,3 +14,14 @@ Token Design
     _beforeTokenTransfer
 
     _mintMinerReward
+
+
+
+command used:
+    nvm use 18  
+    npm install --save-dev hardhat
+    npx hardhat compile
+
+
+Reference:
+    https://www.youtube.com/watch?v=gc7e90MHvl8
