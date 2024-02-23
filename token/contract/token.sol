@@ -42,6 +42,9 @@ contract VibeToken is ERC20Capped, ERC20Burnable {
         blockReward = reward * ( 10 ** decimals());
     }
 
+    function destroy() public onlyOwner {
+        selfdestruct(owner);
+    }
 
     modifier onlyOwner {
         require(msg.sender == owner, "Only the owner can call this function");
